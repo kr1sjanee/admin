@@ -18,6 +18,8 @@
     <!-- cdn of adminLTE -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
+    <!-- Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -261,6 +263,7 @@
         <a href="#" class="small-box-footer">
           More info <i class="fas fa-arrow-circle-right"></i>
         </a>
+        <canvas id="myChart" width="400" height="200"></canvas>
       </div>
         </div>
       </div>
@@ -268,6 +271,41 @@
 
     </div>
   </div>
+
+  <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Data for the chart (you can replace this with your data)
+            var data = {
+                labels: ['January', 'February', 'March', 'April', 'May'],
+                datasets: [{
+                    label: 'Monthly Sales',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    data: [65, 59, 80, 81, 56],
+                }],
+            };
+
+            // Chart configuration
+            var options = {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                    },
+                },
+            };
+
+            // Get the canvas element
+            var ctx = document.getElementById('myChart').getContext('2d');
+
+            // Create the chart
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: data,
+                options: options,
+            });
+        });
+    </script>
 
 </body>
 
