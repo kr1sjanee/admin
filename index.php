@@ -23,7 +23,7 @@
 </head>
 
 <body>
-  <div class="wrapper">
+  < class="wrapper">
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
@@ -239,73 +239,78 @@
       <div class="content-header">
         <div class="container">
           <!-- Your content header goes here -->
+          <div class="small-box bg-gradient-success">
+            <div class="inner">
+              <h3>44</h3>
+              <p>User Registrations</p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-user-plus"></i>
+            </div>
+            <a href="#" class="small-box-footer">
+              More info <i class="fas fa-arrow-circle-right"></i>
+            </a>
+          </div>
+
           <div class="small-box bg-info">
-        <div class="inner">
-          <h3>150</h3>
-          <p>New Orders</p>
-        </div>
-        <div class="icon">
-          <i class="fas fa-shopping-cart"></i>
-        </div>
-        <a href="#" class="small-box-footer">
-          More info <i class="fas fa-arrow-circle-right"></i>
-        </a>
-      </div>
-
-      <div class="small-box bg-gradient-success">
-        <div class="inner">
-          <h3>44</h3>
-          <p>User Registrations</p>
-        </div>
-        <div class="icon">
-          <i class="fas fa-user-plus"></i>
-        </div>
-        <a href="#" class="small-box-footer">
-          More info <i class="fas fa-arrow-circle-right"></i>
-        </a>
-        <canvas id="myChart" width="400" height="200"></canvas>
-      </div>
+            <div class="inner">
+              <h3>150</h3>
+              <p>New Orders</p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <a href="#" class="small-box-footer">
+              More info <i class="fas fa-arrow-circle-right"></i>
+            </a>
+          </div>
+          <!-- Chart Canvas for the new chart -->
+          <canvas id="myLineChart" width="400" height="200"></canvas>
         </div>
       </div>
-    </div>
-
     </div>
   </div>
 
   <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Data for the chart (you can replace this with your data)
-            var data = {
-                labels: ['January', 'February', 'March', 'April', 'May'],
-                datasets: [{
-                    label: 'Monthly Sales',
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1,
-                    data: [65, 59, 80, 81, 56],
-                }],
-            };
+    const data = {
+      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      datasets: [{
+        label: 'Looping tension',
+        data: [65, 59, 80, 81, 26, 55, 40],
+        fill: false,
+        borderColor: 'rgb(75, 192, 192)',
+      }],
+    };
 
-            // Chart configuration
-            var options = {
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                    },
-                },
-            };
+    const config = {
+      type: 'line',
+      data: data,
+      options: {
+        animations: {
+          tension: {
+            duration: 1000,
+            easing: 'linear',
+            from: 1,
+            to: 0,
+            loop: true
+          }
+        },
+        scales: {
+          y: {
+            min: 0,
+            max: 100
+          }
+        }
+      }
+    };
+    // Get the canvas element for the new chart
+    var ctxLineChart = document.getElementById('myLineChart').getContext('2d');
 
-            // Get the canvas element
-            var ctx = document.getElementById('myChart').getContext('2d');
+    // Create the new chart
+    var myLineChart = new Chart(ctxLineChart, config);
+  </script>
 
-            // Create the chart
-            var myChart = new Chart(ctx, {
-                type: 'bar',
-                data: data,
-                options: options,
-            });
-        });
-    </script>
+ 
 
 </body>
 
