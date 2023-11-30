@@ -267,10 +267,12 @@
           <!-- Chart Canvas for the new chart -->
           <div style="margin-top: 50px; text-align: center;">
             <h2>Customer</h2>
+            <h6>A bar chart provides a way of showing data values represented as vertical bars. It is sometimes used to show trend data, and the comparison of multiple data sets side by side.</h6>
             <canvas id="myLineChart" width="400" height="200"></canvas>
           </div>
           <div style="margin-top: 50px; text-align: center;">
             <h2>Rate Sales</h2>
+            <h6>A line chart is a way of plotting data points on a line. Often, it is used to show trend data, or the comparison of two data sets.</h6>
             <canvas id="myBarChart" width="400" height="200"></canvas>
           </div>
         </div>
