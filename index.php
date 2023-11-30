@@ -295,7 +295,7 @@
       options: {
         animations: {
           tension: {
-            duration: 1000,
+            duration: 1500,
             easing: 'linear',
             from: 1,
             to: 0,
@@ -342,7 +342,7 @@
           'rgb(153, 102, 255)',
           'rgb(201, 203, 207)'
         ],
-        borderWidth: 1
+        borderWidth: 4
       }]
     };
 
