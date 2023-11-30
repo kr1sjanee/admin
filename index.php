@@ -265,7 +265,14 @@
             </a>
           </div>
           <!-- Chart Canvas for the new chart -->
-          <canvas id="myLineChart" width="400" height="200"></canvas>
+          <div style="margin-top: 50px; text-align: center;">
+            <h2>Customer</h2>
+            <canvas id="myLineChart" width="400" height="200"></canvas>
+          </div>
+          <div style="margin-top: 50px; text-align: center;">
+            <h2>Rate Sales</h2>
+            <canvas id="myBarChart" width="400" height="200"></canvas>
+          </div>
         </div>
       </div>
     </div>
@@ -308,6 +315,54 @@
 
     // Create the new chart
     var myLineChart = new Chart(ctxLineChart, config);
+  </script>
+
+<script>
+    const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+    const dataBarChart = {
+      labels: labels,
+      datasets: [{
+        label: 'My First Dataset',
+        data: [65, 59, 80, 81, 56, 55, 40],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(255, 205, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(201, 203, 207, 0.2)'
+        ],
+        borderColor: [
+          'rgb(255, 99, 132)',
+          'rgb(255, 159, 64)',
+          'rgb(255, 205, 86)',
+          'rgb(75, 192, 192)',
+          'rgb(54, 162, 235)',
+          'rgb(153, 102, 255)',
+          'rgb(201, 203, 207)'
+        ],
+        borderWidth: 1
+      }]
+    };
+
+    const configBarChart = {
+      type: 'bar',
+      data: dataBarChart,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      },
+    };
+
+    // Get the canvas element for the bar chart
+    var ctxBarChart = document.getElementById('myBarChart').getContext('2d');
+
+    // Create the bar chart
+    var myBarChart = new Chart(ctxBarChart, configBarChart);
   </script>
 
  
