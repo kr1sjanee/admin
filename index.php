@@ -22,7 +22,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body>
+<body class="layout-fixed layout-navbar-fixed layout-footer-fixed">
   <div class="wrapper">
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -95,7 +95,7 @@
     </div>
     <!-- .main-header -->
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <nav id="main-navbar" class="main-header navbar navbar-expand navbar-white navbar-light">
       <!-- Left navbar links -->
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -319,7 +319,7 @@
     var myLineChart = new Chart(ctxLineChart, config);
   </script>
 
-<script>
+  <script>
     const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
     const dataBarChart = {
       labels: labels,
