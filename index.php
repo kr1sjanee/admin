@@ -239,31 +239,6 @@
       <div class="content-header">
         <div class="container">
           <!-- Your content header goes here -->
-          <div class="small-box bg-gradient-success">
-            <div class="inner">
-              <h3>44</h3>
-              <p>User Registrations</p>
-            </div>
-            <div class="icon">
-              <i class="fas fa-user-plus"></i>
-            </div>
-            <a href="#" class="small-box-footer">
-              More info <i class="fas fa-arrow-circle-right"></i>
-            </a>
-          </div>
-
-          <div class="small-box bg-info">
-            <div class="inner">
-              <h3>150</h3>
-              <p>New Orders</p>
-            </div>
-            <div class="icon">
-              <i class="fas fa-shopping-cart"></i>
-            </div>
-            <a href="#" class="small-box-footer">
-              More info <i class="fas fa-arrow-circle-right"></i>
-            </a>
-          </div>
           <!-- Chart Canvas for the new chart -->
           <div style="margin-top: 50px; text-align: center;">
             <h2>Customer</h2>
